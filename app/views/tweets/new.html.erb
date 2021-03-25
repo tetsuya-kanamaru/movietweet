@@ -4,7 +4,7 @@
       <h3>投稿する</h3>
       <%= form.text_field :title, placeholder: "name" %>
       <%= form.file_field :image%>
-      <%= form.text_area :text, placeholder: "text" %>
+      <%= form.text_field :content, placeholder: "content" %>
       <%= form.submit "SEND" %>
     <% end %>
   </div>

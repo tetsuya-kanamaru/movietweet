@@ -4,11 +4,9 @@
       <p><%= tweet.title %></p>
       <span class="content-text">
         <%= tweet.content %>
-        <%
-=begin%>
- <%=image_tag tweet.image %> 
-<%
-=end%>
+        <% if tweet.image.attached? %>
+          <%=image_tag tweet.image, width: "100px" %> 
+        <% end %>
       </span>
     </div>
   <% end %>

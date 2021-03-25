@@ -1,17 +1,21 @@
 <div class="contents row">
-  <div class="content_post">
-    <div class="more">
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
-        </li>
-      </ul>
+    <div class="content-title content">
+      <p><%= @tweet.title %></p>
+      <span class="content-text content">
+        <%= @tweet.content %>
+      </span>
+
+      <% if @tweet.attachment.attached? %>
+        <% fullfilename = rails_blob_path(@tweet.attachment) %>
+        <% @ext = File.extname(fullfilename).downcase %>
+
+        <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
+          <%= image_tag rails_blob_path(@tweet.attachment), width: "150px" %>
+        <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".mov" || @ext == ".webm" || @ext == ".flv" %>
+          <%= video_tag rails_blob_path(@tweet.attachment), width: "150px", controls: true, playsinline: true %>
+        <% end %>
+      <% end %>
+      <%= link_to "編集", edit_tweet_path(@tweet.id), method: :get %>
+      <%= link_to "削除", tweet_path(@tweet.id), method: :delete %>
     </div>
-    <p><%= @tweet.content %></p>
-    <span class="title"><%= @tweet.title %></span>
-    <span class="image"><%= image_tag @tweet.image, width: "150px" %></span>
-  </div>
 </div>

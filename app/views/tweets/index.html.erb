@@ -4,6 +4,11 @@
       <p><%= tweet.title %></p>
       <span class="content-text">
         <%= tweet.content %>
+        <%
+=begin%>
+ <%=image_tag tweet.image %> 
+<%
+=end%>
       </span>
     </div>
   <% end %>

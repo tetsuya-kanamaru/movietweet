@@ -1,15 +1,15 @@
 <div class="contents">
   <% @tweets.each do |tweet| %>
-    <div class="content">
+    <div class="content-title content">
       <p><%= tweet.title %></p>
-      <span class="content-text">
+      <span class="content-text content">
         <%= tweet.content %>
-        <%
-=begin%>
- <%=image_tag tweet.image %> 
-<%
-=end%>
       </span>
+      <% if tweet.image.attached? %>
+        <span class="content-image content">
+          <%= image_tag tweet.image, width: "150px" %> 
+        </span>
+      <% end %>
     </div>
   <% end %>
 </div>

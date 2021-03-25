@@ -10,6 +10,7 @@
           <%= image_tag tweet.image, width: "150px" %> 
         </span>
       <% end %>
+      <%= link_to "編集", edit_tweet_path(tweet.id) %>
       <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
     </div>
   <% end %>

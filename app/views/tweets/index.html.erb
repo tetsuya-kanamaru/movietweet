@@ -21,8 +21,10 @@
         <% end %>
       <% end %>
       <%= link_to "詳細", tweet_path(tweet.id), method: :get %>
-      <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
-      <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
+      <% if user_signed_in? && current_user.id == tweet.user_id %>
+        <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
+        <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
+      <% end %>
     </div>
   <% end %>
 </div>

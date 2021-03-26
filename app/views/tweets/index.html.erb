@@ -12,7 +12,7 @@
 
         <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
           <%= image_tag rails_blob_path(tweet.attachment), width: "150px" %>
-        <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".mov" || @ext == ".webm" || @ext == ".flv" %>
+        <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".webm" || @ext == ".flv" %>
           <%= video_tag rails_blob_path(tweet.attachment), width: "150px", controls: true, playsinline: true %>
         <% end %>
       <% end %>

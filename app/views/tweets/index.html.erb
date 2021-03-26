@@ -7,7 +7,9 @@
         <%= tweet.content %>
       </span>
       <span class="content-text name">
-        <p>投稿者：<%= tweet.user.name %></p>
+        <a href="/users/<%= tweet.user.id %>">
+          <p>投稿者：<%= tweet.user.name %></p>
+        </a>
       </span>
       
 

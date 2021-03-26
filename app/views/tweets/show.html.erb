@@ -3,7 +3,11 @@
       <p><%= @tweet.title %></p>
       <span class="content-text content">
         <%= @tweet.content %>
-        <p>投稿者：<%= @tweet.user.name %></p>
+      </span>
+      <span class="content-text name">
+        <a href="/users/<%= @tweet.user.id %>">
+          <p>投稿者：<%= @tweet.user.name %></p>
+        </a>
       </span>
 
       <% if @tweet.attachment.attached? %>

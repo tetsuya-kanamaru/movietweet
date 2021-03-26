@@ -1,15 +1,9 @@
-<div class="contents">
+<div class="contents row">
+  <p><%= @name %>さんの投稿一覧</p>
   <% @tweets.each do |tweet| %>
-    <div class="content-title content">
-
+    <div class="content_post">
       <p><%= tweet.title %></p>
-      <span class="content-text content">
-        <%= tweet.content %>
-      </span>
-      <span class="content-text name">
-        <p>投稿者：<%= tweet.user.name %></p>
-      </span>
-      
+      <p><%= tweet.content %></p>
 
       <% if tweet.attachment.attached? %>
         <% fullfilename = rails_blob_path(tweet.attachment) %>
@@ -22,11 +16,6 @@
         <% end %>
       <% end %>
 
-
-      <%= link_to "詳細", tweet_path(tweet.id), method: :get %>
-      <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
-      <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
     </div>
   <% end %>
 </div>
-

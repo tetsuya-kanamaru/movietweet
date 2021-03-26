@@ -3,6 +3,7 @@
       <p><%= @tweet.title %></p>
       <span class="content-text content">
         <%= @tweet.content %>
+        <p>投稿者：<%= @tweet.user.name %></p>
       </span>
 
       <% if @tweet.attachment.attached? %>

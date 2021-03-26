@@ -16,6 +16,7 @@
         <h1 class="grid-6"><a href="/">MovieTweet</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
+            <%= link_to "マイページ", user_path(current_user.id) %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             <%= link_to "投稿する", new_tweet_path, class: "post" %>
           </div>

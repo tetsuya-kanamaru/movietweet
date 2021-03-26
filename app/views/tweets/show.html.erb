@@ -4,6 +4,11 @@
       <span class="content-text content">
         <%= @tweet.content %>
       </span>
+      <span class="content-text name">
+        <a href="/users/<%= @tweet.user.id %>">
+          <p>投稿者：<%= @tweet.user.name %></p>
+        </a>
+      </span>
 
       <% if @tweet.attachment.attached? %>
         <% fullfilename = rails_blob_path(@tweet.attachment) %>

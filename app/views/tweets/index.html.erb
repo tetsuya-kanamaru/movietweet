@@ -1,7 +1,6 @@
 <div class="contents">
   <% @tweets.each do |tweet| %>
     <div class="content-title content">
-
       <p><%= tweet.title %></p>
       <span class="content-text content">
         <%= tweet.content %>
@@ -11,8 +10,6 @@
           <p>投稿者：<%= tweet.user.name %></p>
         </a>
       </span>
-      
-
       <% if tweet.attachment.attached? %>
         <% fullfilename = rails_blob_path(tweet.attachment) %>
         <% @ext = File.extname(fullfilename).downcase %>
@@ -23,8 +20,6 @@
           <%= video_tag rails_blob_path(tweet.attachment), width: "150px", controls: true, playsinline: true %>
         <% end %>
       <% end %>
-
-
       <%= link_to "詳細", tweet_path(tweet.id), method: :get %>
       <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
       <%= link_to "削除", tweet_path(tweet.id), method: :delete %>

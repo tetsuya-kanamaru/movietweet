@@ -4,7 +4,7 @@ class Tweet < ApplicationRecord
   has_one_attached :attachment
 
   def self.search(search)
-    if search
+    if search != ""
       Tweet.where('title LIKE(?)', "&#{search}%")
     else
       Tweet.all

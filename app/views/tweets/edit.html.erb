@@ -2,10 +2,7 @@
   <div class="container">
     <%= form_with(model: @tweet, local: true) do |form| %>
       <h3>編集する</h3>
-      <%= form.text_field :title, placeholder: "name" %>
-      <%= form.file_field :attachment %>
-      <%= form.text_area :content, placeholder: "text" %>
-      <%= form.submit "SEND" %>
+      <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
 </div>

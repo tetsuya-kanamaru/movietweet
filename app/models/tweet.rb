@@ -1,4 +1,5 @@
 class Tweet < ApplicationRecord
+  validates :title, presence: true
   belongs_to :user
   has_many :comments
   has_one_attached :attachment
@@ -7,7 +8,7 @@ class Tweet < ApplicationRecord
     if search != ""
       Tweet.where('title LIKE(?)', "&#{search}%")
     else
-      Tweet.all
+      Tweet.includes(:user).order("created_at DESC")
     end
   end
 end

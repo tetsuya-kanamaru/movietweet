@@ -12,8 +12,10 @@
 
   <body>
     <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">MovieTweet</a></h1>
+      <div class="header-right">
+        <h1 class="grid-6"><%= link_to "MovieTweet", root_path %></h1>
+      </div>
+      <div class="header-left">
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <%= link_to "マイページ", user_path(current_user.id) %>

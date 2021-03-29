@@ -5,33 +5,7 @@
 
 <div class="contents">
   <% @tweets.each do |tweet| %>
-    <div class="content-title content">
-      <p><%= tweet.title %></p>
-      <span class="content-text content">
-        <%= tweet.content %>
-      </span>
-      <span class="content-text name">
-        <a href="/users/<%= tweet.user.id %>">
-          <p>投稿者：<%= tweet.user.name %></p>
-        </a>
-      </span>
-
-      <% if tweet.attachment.attached? %>
-        <% fullfilename = rails_blob_path(tweet.attachment) %>
-        <% @ext = File.extname(fullfilename).downcase %>
-        <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
-          <%= image_tag rails_blob_path(tweet.attachment), width: "150px" %>
-        <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".webm" || @ext == ".flv" %>
-          <%= video_tag rails_blob_path(tweet.attachment), width: "150px", controls: true, playsinline: true %>
-        <% end %>
-      <% end %>
-      
-      <%= link_to "詳細", tweet_path(tweet.id), method: :get %>
-      <% if user_signed_in? && current_user.id == tweet.user_id %>
-        <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
-        <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
-      <% end %>
-    </div>
+    <%= render partial: "tweet", locals: { tweet: tweet } %>
   <% end %>
 </div>
 

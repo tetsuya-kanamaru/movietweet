@@ -293,7 +293,7 @@ input[type=checkbox].checkbox:checked + label::after {
 }
 
 .field .submit {
-  width: 150px;
+  width: 210px;
   height: 35px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -330,6 +330,7 @@ input[type=checkbox].checkbox:checked + label::after {
   width: 320px;
   height: 230px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
 }
 
 .content-box {
@@ -393,4 +394,62 @@ input[type=checkbox].checkbox:checked + label::after {
 
 .post-field {
   margin: 45px 0;
+}
+
+.post-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-text input {
+  width: 350px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.post-text textarea {
+  width: 350px;
+  height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.post-content {
+  height: 100px;
+}
+
+/* .image_btn{
+  display: block;
+  width: 210px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(252, 145, 145, 1);
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 35px;
+}
+
+.image_form{
+  display: none;
+} */
+
+.post-btn {
+  display: block;
+  width: 210px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(252, 145, 145, 1);
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
 }

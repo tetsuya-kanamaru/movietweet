@@ -1,11 +1,10 @@
 <div class="post-text">
-  <%= form.text_field :title, placeholder: "タイトル" %>
-  <%= form.text_area :content, placeholder: "説明" %>
+  <%= form.text_field :title, placeholder: "タイトル（必須）" %>
+  <%= form.text_area :content, placeholder: "説明（任意）" %>
 </div>
 <div class="post-content">
-  <div class="label"><%= f.label :password, "パスワード" %></div>
-  <%= form.file_field :attachment, placeholder: "file" %>
+    <%= form.file_field :attachment %>
 </div>
-<div class="post-send">
-  <%= form.submit "投稿" %>
+<div class="post-submit">
+  <%= form.submit "投稿", class: "post-btn" %>
 </div>

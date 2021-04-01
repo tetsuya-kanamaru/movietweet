@@ -1,27 +1,21 @@
-<div class="content-title">
-  <h1><%= tweet.title %></h1>
-  <p><%= tweet.content %></p>
-  <h2><%= link_to tweet.user.name, user_path(tweet.user.id) %></h2>
-</div>
-
-<div class="content-box">
-  <div class="content-image">
-    <% if tweet.attachment.attached? %>
-      <% fullfilename = rails_blob_path(tweet.attachment) %>
-      <% @ext = File.extname(fullfilename).downcase %>
-      <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
-        <%= link_to image_tag(fullfilename, width: "150px"), tweet_path(tweet.id), method: :get %>
-      <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".webm" || @ext == ".flv" %>
-        <%= video_tag fullfilename, width: "150px", controls: true, playsinline: true %>
+<div class="image-content">
+  <div class="content-box">
+    <div class="content-image">
+      <% if tweet.attachment.attached? %>
+        <% fullfilename = rails_blob_path(tweet.attachment) %>
+        <% @ext = File.extname(fullfilename).downcase %>
+        <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
+          <%= link_to image_tag(fullfilename, width: "150px"), tweet_path(tweet.id), method: :get %>
+        <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".webm" || @ext == ".flv" %>
+          <%= video_tag fullfilename, width: "150px", controls: true, playsinline: true %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-    
-  <div class="content-edit">
-    <%= link_to "詳細", tweet_path(tweet.id), method: :get %>
-    <% if user_signed_in? && current_user.id == tweet.user_id %>
-      <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
-      <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
-    <% end %>
+
+  <div class="content-title">
+    <h1><%= tweet.title %></h1>
+    <p><%= tweet.content %></p>
+    <%= link_to tweet.user.name, user_path(tweet.user.id) %>
   </div>
 </div>

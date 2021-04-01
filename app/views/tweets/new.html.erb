@@ -1,7 +1,9 @@
-<div class="contents">
-  <div class="container">
+<div class="post-container">
+  <div class="post-title">
+    <h1>投稿する</h1>
+  </div>
+  <div class="post-field">
     <%= form_with(model: @tweet, local: true) do |form| %>
-      <h3>投稿する</h3>
       <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>

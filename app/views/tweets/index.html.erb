@@ -1,11 +1,45 @@
-<%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
+<% unless user_signed_in? %>
+  <div class="top-container"> 
+    <%= image_tag "top-image.jpg", class: "top-image" %>
+    <h1>大切な思い出を、いつまでも</h1>
+    <p>スマホで撮った家族や友人、恋人との写真や動画を共有。<br>
+    コメント機能で楽しく思い出を振り返ることができます。</p>
+    <%= image_tag "phone-image.png", class: "phone-image" %>
+    <%= image_tag "apple-app.png", class: "apple-app" %>
+    <%= image_tag "google-app.png", class: "google-app" %>
+  </div>
+  <div class="main-container" id="main">
+    <div class="main-contents">
+      <%= image_tag "content-image1.png" %>
+      <h1>アルバム管理</h1>
+      <p>アップロードされた写真は月ごとに整理されるので、アルバムの管理が簡単にできます。</p>
+    </div>
+    <div class="main-contents">
+      <%= image_tag "content-image2.jpg" %>
+      <h1>コメントで会話</h1>
+      <p>写真にコメントを入れることで、素敵な思い出がさらに素敵なものになります。</p>
+    </div>
+    <div class="main-contents">
+      <%= image_tag "content-image3.jpg" %>
+      <h1>招待制なので安心</h1>
+      <p>写真を見られるのもコメントできるのも招待した人だけなので安心です。</p>
+    </div>
+    <div class="main-contents">
+      <%= image_tag "content-image4.jpg", class: "" %>
+      <h1>ダウンロード可能</h1>
+      <p>お気に入りの写真があれば、ダウンロードして保存ができます。</p>
+    </div>
+  </div>
+<% else %>
+  <div class="my-contents">
+    <div class="my-name">
+      <h1><%= current_user.name %>さんの投稿一覧</h1>
+    </div>
+    <div class="image-contents">
+      <% @tweets.each do |tweet| %>
+        <%= render partial: "tweet", locals: { tweet: tweet } %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
-
-<div class="contents">
-  <% @tweets.each do |tweet| %>
-    <%= render partial: "tweet", locals: { tweet: tweet } %>
-  <% end %>
-</div>
 

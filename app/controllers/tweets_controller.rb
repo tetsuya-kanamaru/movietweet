@@ -3,7 +3,9 @@ class TweetsController < ApplicationController
   before_action :move_to_root_path, except: [:index, :show, :search]
 
   def index
-    @tweets = Tweet.includes(:user).order("created_at DESC")
+    if user_signed_in?
+      @tweets = Tweet.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+    end
   end
 
   def new

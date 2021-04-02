@@ -3,7 +3,9 @@
   <%= form.text_area :content, placeholder: "説明（任意）" %>
 </div>
 <div class="post-content">
-    <%= form.file_field :attachment %>
+    <%= form.label :attachment, "file", class: "image-btn" %>
+    <%= form.file_field :attachment, class: "image-form" %>
+    <%= image_tag "no_image.png", class: "img-view" %>
 </div>
 <div class="post-submit">
   <%= form.submit "投稿", class: "post-btn" %>

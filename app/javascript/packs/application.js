@@ -8,8 +8,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import "tweets/main.js"
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require('jquery');
+require('./main.js');

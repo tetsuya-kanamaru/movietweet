@@ -474,3 +474,41 @@ input[type=checkbox].checkbox:checked + label::after {
   text-decoration: none;
   text-align: center;
 }
+
+.comment-container {
+  text-align: center;
+}
+
+.comment-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-container textarea {
+  width: 320px;
+  height: 100px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.comment-container input {
+  width: 210px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(252, 145, 145, 1);
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.comments {
+  margin: 0 auto;
+  width: 350px;
+}
+
+.comments p {
+  margin: 15px 0;
+}

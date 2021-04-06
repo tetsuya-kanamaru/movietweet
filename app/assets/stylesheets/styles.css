@@ -304,7 +304,7 @@ input[type=checkbox].checkbox:checked + label::after {
 
 .field .submit:hover {
   cursor: pointer;
-  background-color: rgba(252, 145, 145, 0.6);
+  opacity: 0.7;;
 }
 
 .my-contents {
@@ -328,7 +328,7 @@ input[type=checkbox].checkbox:checked + label::after {
 
 .image-content {
   width: 320px;
-  height: 230px;
+  height: 250px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 20px 0;
 }
@@ -339,6 +339,10 @@ input[type=checkbox].checkbox:checked + label::after {
   width: 320px;
   height: 180px;
   margin: 0 auto;
+}
+
+.content-box:hover {
+  opacity: 0.7;
 }
 
 .content-image img {
@@ -380,6 +384,17 @@ input[type=checkbox].checkbox:checked + label::after {
   font-size: calc(50% + 0.3vw);
   color: rgba(0, 0, 0, 0.7);
   margin-left: auto;
+}
+
+.content-title a:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.edit-container a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(50% + 0.3vw);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .post-container {
@@ -433,7 +448,7 @@ input[type=checkbox].checkbox:checked + label::after {
   align-items: center;
 }
 
-.image-btn{
+.image-btn {
   display: block;
   width: 210px;
   height: 35px;
@@ -446,6 +461,11 @@ input[type=checkbox].checkbox:checked + label::after {
   text-align: center;
   line-height: 35px;
 }
+.image-btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 
 .image-form{
   display: none;
@@ -475,6 +495,11 @@ input[type=checkbox].checkbox:checked + label::after {
   text-align: center;
 }
 
+.post-btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 .comment-container {
   text-align: center;
 }
@@ -502,6 +527,11 @@ input[type=checkbox].checkbox:checked + label::after {
   font-weight: bold;
   color: #fff;
   margin-bottom: 30px;
+}
+
+.comment-container input:hover {
+  cursor: pointer;
+  background-color: rgba(252, 145, 145, 0.7);
 }
 
 .comments {

@@ -18,4 +18,9 @@
     <p><%= tweet.content %></p>
     <%= link_to tweet.user.name, user_path(tweet.user.id) %>
   </div>
+
+  <div class="edit-container">
+    <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
+    <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+  </div>
 </div>

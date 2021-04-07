@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 require('jquery');
 require('./main.js');
+require('./comments.js');

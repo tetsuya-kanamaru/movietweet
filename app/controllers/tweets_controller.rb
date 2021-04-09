@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @tweet.comments.includes(:user)
+    @comments = @tweet.comments.includes(:user).order("created_at DESC")
   end
 
   def search

@@ -1,22 +1,24 @@
 function comment() {
   const submit = document.getElementById("submit");
   submit.addEventListener("click", (e) => {
-    const formData = new FormData(document.getElementById("form"));
+    const form = document.getElementById("form")
+    const formData = new FormData(form);
+    const tweetCommentsPath = form.getAttribute("action")
     const XHR = new XMLHttpRequest();
-    XHR.open("POST", " /tweets/:tweet_id/comments", true);
+    XHR.open("POST", tweetCommentsPath, true);
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
       const item = XHR.response.comment;
+      const user_name = XHR.response.user_name;
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
       const HTML = `
       <div class="comment-content">
-        <p>
-          ${item.comment}
-        </p>
+        <p><strong><a href="/users/${item.user_id}">${user_name}</a></strong>
+        ${ item.comment }</p>
       </div>`;
-      list.insertAdjacentHTML("afterend", HTML);
+      list.insertAdjacentHTML("afterbegin", HTML);
 
       formText.value = "";
 
@@ -25,6 +27,10 @@ function comment() {
       } else {
         return null;
       }
+    };
+
+    XHR.onerror = function() {
+      alert("Request Failed");
     };
 
     e.preventDefault();

@@ -4,4 +4,10 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
   
+  def create
+    
+    binding.pry
+    
+  end
+  
 end

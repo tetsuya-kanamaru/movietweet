@@ -1,0 +1,35 @@
+<div class='group-form'>
+  <h1>新規グループ</h1>
+  <%=form_with model: @group, local: true do |f|%>
+    <div class='group-form__field'>
+      <div class='group-form__field--left'>
+        <%= f.label :グループ名, class: 'group-form__label'%>
+      </div>
+      <div class='group-form__field--right'>
+        <%= f.text_field :name, class: 'group_name group-form__input', placeholder: 'グループ名を入力してください'%>
+      </div>
+    </div>
+    <div class='group-form__field'>
+    </div>
+    <div class='group-form__field'>
+      <div class='group-form__field--left'>
+        <label class='group-form__label' for='group_グループメンバー'>グループメンバー</label>
+      </div>
+      <div class='group-form__field--right'>
+        <select name="room[user_ids][]">
+          <option value="">グループに招待するユーザーを選んでください</option>
+          <% User.all.where.not(id: current_user.id).each do |user| %>
+            <option value=<%= user.id %>><%= user.name %></option>
+          <% end %>
+        </select>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    <div class='group-form__field'>
+      <div class='group-form__field--left'></div>
+      <div class='group-form__field--right'>
+        <%= f.submit class: 'group-form__action-btn' %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -16,13 +16,13 @@
         <label class='group-form__label' for='group_グループメンバー'>グループメンバー</label>
       </div>
       <div class='group-form__field--right'>
-        <select name="room[user_ids][]">
+        <select name="group[user_ids][]">
           <option value="">グループに招待するユーザーを選んでください</option>
           <% User.all.where.not(id: current_user.id).each do |user| %>
             <option value=<%= user.id %>><%= user.name %></option>
           <% end %>
         </select>
-        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+        <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
     <div class='group-form__field'>
@@ -32,4 +32,5 @@
       </div>
     </div>
   <% end %>
+
 </div>

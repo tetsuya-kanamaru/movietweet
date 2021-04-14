@@ -9,6 +9,7 @@
           <li><%= link_to "ホーム", root_path %></li>
           <li><%= link_to "投稿する", new_tweet_path %></li>
           <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+          <li><%= link_to "グループ管理", groups_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
       </nav>

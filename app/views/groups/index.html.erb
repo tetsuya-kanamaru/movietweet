@@ -1,7 +1,0 @@
-<div class="groups-field">
-  <%= link_to 'グループを作る', new_group_path %>
-
-  <% @groups.each do |group| %>
-    <%= link_to group.name, group_path(group.id) %></p>
-  <% end %>
-</div>

@@ -4,8 +4,8 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
@@ -306,7 +306,6 @@ input[type=checkbox].checkbox:checked + label::after {
   cursor: pointer;
   opacity: 0.7;;
 }
-
 .my-contents {
   padding-top: 80px;
 }
@@ -466,7 +465,6 @@ input[type=checkbox].checkbox:checked + label::after {
   cursor: pointer;
 }
 
-
 .image-form{
   display: none;
 }
@@ -541,4 +539,13 @@ input[type=checkbox].checkbox:checked + label::after {
 
 .comments p {
   margin: 15px 0;
+}
+
+.group-form {
+  padding-top: 80px;
+  text-align: center;
+}
+
+.groups-field {
+  padding-top: 160px;
 }

@@ -3,9 +3,7 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.create(comment_params)
     user_name = comment.user.name
-    # redirect_to "/tweets/#{comment.tweet.id}"
     render json:{ comment: comment, user_name: user_name }
-    # render json:{ user_name: user_name }
   end
 
   private

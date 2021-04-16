@@ -5,7 +5,7 @@
         <% fullfilename = rails_blob_path(tweet.attachment) %>
         <% @ext = File.extname(fullfilename).downcase %>
         <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
-          <%= link_to image_tag(fullfilename, width: "150px"), tweet_path(tweet.id), method: :get %>
+          <%= link_to image_tag(fullfilename, width: "150px"), tweet_path(tweet.id) %>
         <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".webm" || @ext == ".flv" %>
           <%= link_to video_tag(fullfilename, width: "150px"), tweet_path(tweet.id), controls: true, playsinline: true %>
         <% end %>

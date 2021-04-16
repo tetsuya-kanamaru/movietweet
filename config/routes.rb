@@ -4,14 +4,10 @@ Rails.application.routes.draw do
 
   root to: 'tweets#index'
 
-  resources :tweets, only: :show do
+  resources :tweets do
     resources :comments, only: [:create]
-    # collection do
-    #   get 'search'
+    collection do
+      get 'search'
     end
-
-  resources :groups, only: [:index, :new, :create, :show] do
-    resources :tweets, except: :show
   end
-
 end

@@ -17,4 +17,3 @@ require('./main.js');
 require('./comments.js');
 
 import 'bootstrap';
-import '../stylesheets/application';

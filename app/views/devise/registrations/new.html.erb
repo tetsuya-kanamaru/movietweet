@@ -1,8 +1,8 @@
-<div class="login-form">
+<div class="form">
   <div class="logo-app">
     <%= image_tag "logo-app-removebg.png" %>
   </div>
-  <div class="login-message">
+  <div class="message">
     <h1>ようこそ、MOVIE TWEETへ！</h1>
     <p>下記項目を入力し、新規登録を行ってください。</p>
   </div>
@@ -12,12 +12,12 @@
 
       <div class="field">
         <div class="label"><%= f.label :name, "お名前" %></div>
-        <div class="content"><%= f.text_field :name, autofocus: true, maxlength: "30", class: "input" %></div>
+        <div class="content"><%= f.text_field :name, autofocus: true, maxlength: "30" %></div>
       </div>
 
       <div class="field">
         <div class="label"><%= f.label :email, "Eメール アドレス" %></div>
-        <div class="content"><%= f.email_field :email, autocomplete: "email", class: "input" %></div>
+        <div class="content"><%= f.email_field :email, autocomplete: "email" %></div>
       </div>
 
       <div class="field">
@@ -25,12 +25,12 @@
         <% if @validatable %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
-        <div class="content"><%= f.password_field :password, autocomplete: "off", class: "input" %></div>
+        <div class="content"><%= f.password_field :password, autocomplete: "off" %></div>
       </div>
 
       <div class="field">
         <div class="label"><%= f.label :password_confirmation, "パスワード（確認用）" %></div>
-        <div class="content"><%= f.password_field :password_confirmation, autocomplete: "off", class: "input" %></div>
+        <div class="content"><%= f.password_field :password_confirmation, autocomplete: "off" %></div>
       </div>
 
 

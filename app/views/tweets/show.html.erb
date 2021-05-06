@@ -23,18 +23,16 @@
       <h4>＜コメント一覧＞</h4>
     </div>
 
-    <div id="list">
-    </div>
-
     <div class="comments">
       <% @comments.each do |comment| %>
+        <div id="list">
+        </div>
         <div class="comment-content">
           <p><strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %></strong>
           <%= comment.comment %></p>
         </div>
       <% end %>
     </div>
-    
   </div>
 </div>
 

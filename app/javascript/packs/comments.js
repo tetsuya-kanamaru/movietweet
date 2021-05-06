@@ -8,7 +8,7 @@ function comment() {
     XHR.open("POST", tweetCommentsPath, true);
     XHR.responseType = "json";
     XHR.send(formData);
-    XHR.onload = () => {
+    XHR.onload = (e) => {
       const item = XHR.response.comment;
       const user_name = XHR.response.user_name;
       const list = document.getElementById("list");
@@ -18,7 +18,7 @@ function comment() {
         <p><strong><a href="/users/${item.user_id}">${user_name}</a></strong>
         ${ item.comment }</p>
       </div>`;
-      list.insertAdjacentHTML("afterbegin", HTML);
+      list.insertAdjacentHTML("afterend", HTML);
 
       formText.value = "";
 
@@ -37,4 +37,21 @@ function comment() {
   });
 }
 
-window.addEventListener("load", comment);
+document.addEventListener("turbolinks:load", function() {
+  let pathname = window.location.pathname;
+  pathname = pathname.split("/")
+  if (pathname.length < 1) {
+    return;
+  }
+  
+  pathname = pathname[1]
+  if(pathname !== "tweets") {
+    return;
+  }
+
+  comment();
+})
+
+
+
+

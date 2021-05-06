@@ -1,21 +1,22 @@
-<div class="contents">
-  <p><%= @name %>さんの投稿一覧</p>
-  <% @tweets.each do |tweet| %>
-    <div class="content_post">
-      <p><%= tweet.title %></p>
-      <p><%= tweet.content %></p>
+<div class="account-container">
+  <div class="account-info-title">
+    <h1>アカウント情報</h1>
+  </div>
 
-      <% if tweet.attachment.attached? %>
-        <% fullfilename = rails_blob_path(tweet.attachment) %>
-        <% @ext = File.extname(fullfilename).downcase %>
+  <div class="account-info">
+    <p id="name">&nbsp;お名前：</p>
+    <p id="user-name">&nbsp;<%= current_user.name %></p>
+    <p id="email">&nbsp;Eメール：</p>
+    <p id="user-email">&nbsp;<%= current_user.email %></p>
+  </div>
 
-        <% if @ext == ".jpg" || @ext == ".jpeg" || @ext == ".png" || @ext == ".gif" || @ext == ".heic" %>
-          <%= image_tag rails_blob_path(tweet.attachment), width: "150px" %>
-        <% elsif @ext == ".mp4" || @ext == ".avi" || @ext == ".webm" || @ext == ".flv" %>
-          <%= video_tag rails_blob_path(tweet.attachment), width: "150px", controls: true, playsinline: true %>
-        <% end %>
-      <% end %>
-
+  <div class="links">
+    <div class="edit-link">
+      <%= link_to "アカウントを更新する", edit_user_registration_path %>
     </div>
-  <% end %>
+    <div class="delete-link">
+      <%= link_to "アカウントを削除する", user_registration_path(current_user.id), data: {confirm: "アカウントを削除します。本当によろしいですか？" }, method: :delete %>
+    </div>
+  </div>
 </div>
+

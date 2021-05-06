@@ -3,8 +3,9 @@
     <h1>投稿する</h1>
   </div>
   <div class="post-field">
-    <%= form_with(model: [@group, @tweet], method: :post, local: true) do |form| %>
+    <%= form_with(model: @tweet, method: :post, local: true) do |form| %>
       <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
 </div>
+

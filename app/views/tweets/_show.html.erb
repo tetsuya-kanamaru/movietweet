@@ -20,7 +20,7 @@
   </div>
 
   <div class="edit-container">
-    <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
-    <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+    <%= link_to 'コンテンツの編集', edit_tweet_path(tweet.id), method: :get %>
+    <%= link_to 'コンテンツを削除', tweet_path(tweet.id), data: { confirm: "コンテンツを削除します。本当によろしいですか？" }, method: :delete %>
   </div>
 </div>

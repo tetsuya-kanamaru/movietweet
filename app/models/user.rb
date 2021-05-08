@@ -11,8 +11,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20}
   validates :email, presence: true
   
-  
-
   def remember_me
     true
   end

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :name, presence: true, length: { maximum: 10f }
+  validates :name, presence: true, length: { maximum: 10 }
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6}
   validates :password_confirmation, presence: true

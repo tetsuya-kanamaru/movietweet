@@ -61,4 +61,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  FactoryBot::SyntaxRunner.class_eval do
+    include ActionDispatch::TestProcess
+    include ActiveSupport::Testing::FileFixtures
+    self.file_fixture_path = "spec/fixtures/files"
+  end
 end

@@ -7,4 +7,4 @@ FactoryBot.define do
     association :tweet
     association :user
   end
-end
+end 

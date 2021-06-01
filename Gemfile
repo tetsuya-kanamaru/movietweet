@@ -70,6 +70,7 @@ gem 'rexml'
 
 group :production do
   gem 'rails_12factor'
+  gem 'unicorn'
 end
 
 gem "aws-sdk-s3", require: false

@@ -14,7 +14,7 @@ stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 timeout 60
 
-preload app true
+preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 
 check_client_connection false

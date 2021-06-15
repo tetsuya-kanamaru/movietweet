@@ -39,7 +39,7 @@ function comment() {
 
 document.addEventListener("turbolinks:load", function() {
   let pathname = window.location.pathname;
-  pathname = pathname.split("/")
+  pathname = pathname.split("/");
   if (pathname.length < 1) {
     return;
   }
@@ -51,7 +51,3 @@ document.addEventListener("turbolinks:load", function() {
 
   comment();
 })
-
-
-
-

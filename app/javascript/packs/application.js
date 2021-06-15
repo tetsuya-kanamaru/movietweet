@@ -13,7 +13,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require('jquery');
-require('./main.js');
-require('./comments.js');
+require('./main');
+require('./comments');
 
 import 'bootstrap';

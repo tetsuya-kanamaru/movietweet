@@ -1,9 +1,11 @@
 function comment() {
   const submit = document.getElementById("submit");
+
   submit.addEventListener("click", (e) => {
     const form = document.getElementById("form")
     const formData = new FormData(form);
     const tweetCommentsPath = form.getAttribute("action")
+
     const XHR = new XMLHttpRequest();
     XHR.open("POST", tweetCommentsPath, true);
     XHR.responseType = "json";
@@ -37,17 +39,4 @@ function comment() {
   });
 }
 
-document.addEventListener("turbolinks:load", function() {
-  let pathname = window.location.pathname;
-  pathname = pathname.split("/");
-  if (pathname.length < 1) {
-    return;
-  }
-  
-  pathname = pathname[1]
-  if(pathname !== "tweets") {
-    return;
-  }
-
-  comment();
-})
+window.addEventListener("load", comment);

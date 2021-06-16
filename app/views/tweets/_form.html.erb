@@ -5,6 +5,7 @@
 <div class="post-content">
     <%= form.label :attachment, "file", class: "image-btn" %>
     <%= form.file_field :attachment, class: "image-form" %>
+    <%= image_tag "no_image.png", class: "img-view" %>
 </div>
 <div class="post-submit">
   <%= form.submit "投稿", class: "post-btn" %>

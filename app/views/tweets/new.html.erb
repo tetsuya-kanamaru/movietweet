@@ -2,10 +2,7 @@
   <div class="post-title">
     <h1>投稿する</h1>
   </div>
-  <div class="post-field">
-    <%= form_with(model: @tweet, method: :post, local: true) do |form| %>
-      <%= render partial: "form", locals: { form: form } %>
-    <% end %>
-  </div>
+
+  <%= render partial: "form", locals: { tweet: @tweet } %>
 </div>
 
